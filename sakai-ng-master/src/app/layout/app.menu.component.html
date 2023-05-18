@@ -1,5 +1,5 @@
 <div class="layout-sidebar">
-    <div class="layout-upper">
+    <div class="layout-upper" [ngClass]="{'layout-upper-active': layoutUpperActive, 'layout-upper-static': layoutService.state.staticMenuDesktopInactive}" (mouseover)="layoutUpperActive=true" (mouseleave)="layoutUpperActive=false">
         <a href="#">
             <img alt="logo" src="assets/layout/images/logo-slim.png" />
             <span class="app-name">SERENITY</span>

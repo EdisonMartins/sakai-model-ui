@@ -9,6 +9,8 @@ import { LayoutService } from './service/app.layout.service';
 export class AppMenuComponent implements OnInit {
 
     model: any[] = [];
+    layoutUpperActive: boolean = false;
+    layoutUpperStatic: boolean = false;
 
     constructor(public layoutService: LayoutService) { }
 
