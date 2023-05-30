@@ -43,6 +43,23 @@
 }
 
 
+.sidebar-logo {
+    height: 64px;
+    padding-top: 8px;
+
+    img {
+        height: 48px;
+        margin-left: 12px;
+        vertical-align: middle;
+    }
+
+    .app-name {
+        color:#fff;
+        vertical-align: middle;
+        font-size: 26px;
+    }
+}
+
 .layout-sidebar .sidebar-anchor{
     display: inline-block;
     border: 2px solid #0E76E0;
