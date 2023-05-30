@@ -1,10 +1,10 @@
-<div class="layout-sidebar">
-    <div class="layout-upper" [ngClass]="{'layout-upper-active': layoutUpperActive, 'layout-upper-static': layoutService.state.staticMenuDesktopInactive}" (mouseover)="layoutUpperActive=true" (mouseleave)="layoutUpperActive=false">
+<div class="layout-sidebar" [ngClass]="{'layout-sidebar-active' : layoutService.state.menuHoverActive}" (mouseover)="layoutService.state.menuHoverActive=true" (mouseleave)="layoutService.state.menuHoverActive=false">
+    <div class="layout-upper" style="background-color: #0E76E0;" [ngClass]="{'layout-upper-active': layoutUpperActive, 'layout-upper-static': layoutService.state.staticMenuDesktopInactive}" >
         <a href="#">
-            <img alt="logo" src="assets/layout/images/logo-slim.png" />
-            <span class="app-name">SERENITY</span>
+            <img alt="logo" src="assets/layout/images/logo-white.svg" style="padding-top: 8px; padding-left: 8px;" />
+            <!--<span class="app-name"> - SAT</span>-->
+            <a href="#" class="sidebar-anchor" title="Toggle Menu" (click)="layoutService.onMenuToggle()"></a>
         </a>
-        <a href="#" class="sidebar-anchor" title="Toggle Menu" (click)="layoutService.onMenuToggle()"></a>
     </div>
     <ul class="layout-menu">
         <ng-container *ngFor="let item of model; let i = index;">

@@ -9,7 +9,7 @@ import { LayoutService } from './service/app.layout.service';
 export class AppMenuComponent implements OnInit {
 
     model: any[] = [];
-    layoutUpperActive: boolean = false;
+    layoutUpperActive: boolean = true;
     layoutUpperStatic: boolean = false;
 
     constructor(public layoutService: LayoutService) { }
@@ -19,7 +19,7 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Home',
                 items: [
-                    { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }
+                    { label: 'Dashboard', icon: 'pi pi-fw pi-home' , routerLink: ['/']}
                 ]
             },
             {
