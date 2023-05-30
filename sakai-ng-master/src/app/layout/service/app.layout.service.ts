@@ -77,6 +77,11 @@ export class LayoutService {
         }
     }
 
+    onToggleMenuClick(event: Event) {
+        this.state.overlayMenuActive = !this.state.overlayMenuActive ;
+        event.preventDefault();
+    }
+
     showConfigSidebar() {
         this.state.configSidebarVisible = true;
     }

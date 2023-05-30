@@ -1,9 +1,14 @@
 <div class="layout-topbar" style="background-color: #0E76E0">
     <div style="display: flex;">
-        <a class="layout-topbar-logo" href="#">
-            <img src="assets/layout/images/logo-white.svg" style="margin-left: 35px;">
-            <span style="color: #FFFFFF;">- Modelo</span>
+        <a class="layout-topbar-logo" [ngClass]="{'layout-topbar-logo-menu-active' : layoutService.state.staticMenuDesktopInactive}" href="#">
+            <img src="assets/layout/images/logo-white.svg" alt="logo">
+            <span class="app-name" style="color: #FFFFFF;">SAKAI</span>
         </a>
+
+        <button *ngIf="layoutService.isMobile()" #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+            <i class="pi pi-bars" style="color: #fff;"></i>
+        </button>
+
     </div>
     
     <div style="width: 1550px; display: flex;  margin-left: 325px;">
