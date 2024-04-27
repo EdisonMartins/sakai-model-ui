@@ -13,7 +13,7 @@ import { LayoutService } from './service/app.layout.service';
 		<ng-container>
             <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">{{item.label}}</div>
 			<a *ngIf="(!item.routerLink || item.items) && item.visible !== false" [attr.href]="item.url" (click)="itemClick($event)"
-			   [ngClass]="item.class" [attr.target]="item.target" tabindex="0" pRipple >
+			   [ngClass]="item.class" [attr.target]="item.target" tabindex="0" pRipple>
 				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="layout-menuitem-text">{{item.label}}</span>
 				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
@@ -23,10 +23,9 @@ import { LayoutService } from './service/app.layout.service';
                [fragment]="item.fragment" [queryParamsHandling]="item.queryParamsHandling" [preserveFragment]="item.preserveFragment" 
                [skipLocationChange]="item.skipLocationChange" [replaceUrl]="item.replaceUrl" [state]="item.state" [queryParams]="item.queryParams"
                [attr.target]="item.target" tabindex="0" pRipple>
-                <span class="layout-menuitem-text">{{item.label}}</span>
-			    <i [ngClass]="item.icon" class="layout-menuitem-icon" style="position: absolute;
-                right: 5px;"></i>
-			    <i class="pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
+				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+				<span class="layout-menuitem-text">{{item.label}}</span>
+				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 			</a>
 
 			<ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation">
@@ -40,11 +39,9 @@ import { LayoutService } from './service/app.layout.service';
         trigger('children', [
             state('collapsed', style({
                 height: '0'
-
             })),
             state('expanded', style({
-                height: '*',
-
+                height: '*'
             })),
             transition('collapsed <=> expanded', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
         ])
@@ -134,7 +131,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         return this.root ? 'expanded' : (this.active ? 'expanded' : 'collapsed');
     }
 
-    @HostBinding('class.active-menuitem')
+    @HostBinding('class.active-menuitem') 
     get activeClass() {
         return this.active && !this.root;
     }
